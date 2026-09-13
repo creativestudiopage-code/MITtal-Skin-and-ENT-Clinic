@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mittal Skin & ENT Clinic, Ajmer | 5.0★ Rated Dermatology & ENT Care</title>
+<meta name="description" content="Trusted Skin & ENT Clinic in Adarsh Nagar, Ajmer. Acne, hair fall, pigmentation, allergies, ear care, durbin jaanch (endoscopy) & thyroid care. Call +91 83022 47173">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#00288e',
+        'primary-container': '#1e40af',
+        secondary: '#0051d5',
+        tertiary: '#ff9500',
+        surface: '#f7f9ff',
+        'surface-low': '#eef2ff',
+        'surface-card': '#ffffff',
+        'tint': '#eff6ff',
+        'tint-soft': '#f8fafc',
+        success: '#10b981',
+        text: '#131b2e',
+        muted: '#475569',
+        border: '#e2e8f0',
+      },
+      fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+      boxShadow: {
+        card: '0 2px 12px rgba(19,27,46,0.06)',
+        'card-lg': '0 8px 30px rgba(19,27,46,0.10)',
+        cta: '0 10px 25px -5px rgba(30,64,175,0.35)',
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+  .material-symbols-rounded { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+  ::-webkit-scrollbar { display: none; }
+  * { scrollbar-width: none; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .08s; }
+  .reveal-d2 { transition-delay: .16s; }
+  .reveal-d3 { transition-delay: .24s; }
+
+  /* Before/After comparison slider */
+  .ba-wrap { position: relative; overflow: hidden; border-radius: 1rem; user-select: none; touch-action: none; background: #eef2ff; }
+  .ba-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; pointer-events: none; }
+  .ba-before { position: absolute; inset: 0; overflow: hidden; border-right: 3px solid #fff; }
+  .ba-before > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .ba-handle {
+    position: absolute; top: 0; bottom: 0; width: 3px; background: #fff;
+    box-shadow: 0 0 12px rgba(0,0,0,.35); cursor: ew-resize; z-index: 10;
+  }
+  .ba-knob {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 40px; height: 40px; border-radius: 9999px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.3); color: #00288e; font-size: 20px;
+  }
+  .ba-tag { position: absolute; top: 10px; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; letter-spacing: .04em; z-index: 5; }
+
+  /* Marquee */
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { animation: marquee 22s linear infinite; }
+
+  /* Pulse dot */
+  .pulse-dot { position: relative; }
+  .pulse-dot::after {
+    content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #10b981;
+    animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite; opacity: .75;
+  }
+  @keyframes ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+
+  /* Testimonial auto-slider */
+  .slide-track { display: flex; transition: transform .6s cubic-bezier(.16,1,.3,1); }
+
+  /* Accordion */
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height .45s cubic-bezier(.16,1,.3,1); }
+  .acc.open .acc-body { max-height: 220px; }
+  .acc.open .acc-icon { transform: rotate(45deg); }
+  .acc-icon { transition: transform .35s ease; }
+
+  /* Floating WhatsApp */
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .floaty { animation: floaty 3s ease-in-out infinite; }
+
+  /* Image lightbox zoom */
+  .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(10,15,30,.92);
+    display: flex; align-items: center; justify-content: center; padding: 1rem;
+    opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+  .lightbox.open { opacity: 1; pointer-events: auto; }
+  .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+
+  /* Header shrink */
+  #topbar { transition: all .35s ease; }
+  #topbar.scrolled { box-shadow: 0 4px 20px rgba(19,27,46,.10); }
+
+  @media (min-width: 768px) {
+    .ba-height { height: 340px; }
+    .hero-photo-height { height: 340px; }
+  }
+  .ba-height { height: clamp(200px, 52vw, 340px); }
+  .hero-photo-height { height: clamp(200px, 52vw, 340px); }
+</style>
+</head>
+<body class="bg-surface text-text antialiased">
+
+<!-- ══════════ TOPBAR ══════════ -->
+<header id="topbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl">
+  <div class="max-w-6xl mx-auto px-4 h-[72px] flex items-center justify-between gap-3">
+    <a href="#home" class="flex items-center gap-3 min-w-0">
+      <div class="w-11 h-11 rounded-xl bg-tint flex items-center justify-center text-primary shrink-0">
+        <span class="material-symbols-rounded text-[24px] icon-filled" style="color:#0051d5">local_hospital</span>
+      </div>
+      <div class="min-w-0">
+        <div class="font-bold text-[15px] leading-tight truncate">Mittal Skin & ENT Clinic</div>
+        <div class="text-[11px] text-muted flex items-center gap-1.5 truncate">
+          <span class="w-1.5 h-1.5 rounded-full bg-success pulse-dot shrink-0"></span>
+          Open Daily till 7:00 PM • Adarsh Nagar, Ajmer
+        </div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[14px] font-semibold text-muted">
+      <a href="#services" class="hover:text-primary transition-colors">Services</a>
+      <a href="#results" class="hover:text-primary transition-colors">Results</a>
+      <a href="#durbin" class="hover:text-primary transition-colors">Durbin Jaanch</a>
+      <a href="#reviews" class="hover:text-primary transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2 shrink-0">
+      <a href="tel:+918302247173" aria-label="Call clinic" class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-primary active:scale-95 transition-transform md:hidden">
+        <span class="material-symbols-rounded text-[20px]">call</span>
+      </a>
+      <a href="tel:+918302247173" class="hidden md:inline-flex h-10 px-5 rounded-full bg-primary text-white text-[14px] font-bold items-center gap-2 shadow-cta active:scale-95 transition-transform">
+        <span class="material-symbols-rounded text-[18px]">call</span> +91 83022 47173
+      </a>
+      <button id="menuBtn" class="md:hidden w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-primary">
+        <span class="material-symbols-rounded text-[22px]">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-border bg-white/95 backdrop-blur-xl">
+    <div class="px-5 py-4 flex flex-col gap-1 text-[15px] font-semibold">
+      <a href="#services" class="mob-link py-2.5 border-b border-border/60">Services</a>
+      <a href="#results" class="mob-link py-2.5 border-b border-border/60">Before & After Results</a>
+      <a href="#durbin" class="mob-link py-2.5 border-b border-border/60">Durbin Jaanch</a>
+      <a href="#reviews" class="mob-link py-2.5 border-b border-border/60">Patient Reviews</a>
+      <a href="#contact" class="mob-link py-2.5">Contact & Directions</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-[72px] pb-28 md:pb-0">
+
+<!-- ══════════ HERO ══════════ -->
+<section id="home" class="relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-40 -left-24 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-8 md:pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center relative">
+    <div>
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 mb-5">
+        <span class="material-symbols-rounded text-[16px] text-tertiary icon-filled">star</span>
+        <span class="text-[13px] font-bold text-amber-700">5.0 Rated</span>
+        <span class="text-[12px] text-amber-600">• 104+ Verified Google Reviews</span>
+      </div>
+
+      <h1 class="reveal reveal-d1 text-[34px] md:text-[52px] leading-[1.12] font-extrabold tracking-tight text-primary">
+        Complete Care for Your <span class="text-secondary">Skin</span> & <span class="text-secondary">ENT</span> Health
+      </h1>
+
+      <p class="reveal reveal-d2 mt-4 text-[15px] md:text-[17px] text-muted leading-relaxed max-w-lg">
+        Struggling with persistent skin allergies, acne, hair loss, or sinus issues? Expert diagnosis and compassionate, effective treatment — tailored to you, right here in Ajmer.
+      </p>
+
+      <div class="reveal reveal-d3 mt-7 flex flex-col sm:flex-row gap-3">
+        <a href="#contact" class="h-13 md:h-12 px-7 py-3.5 bg-primary text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 shadow-cta active:scale-[0.97] transition-transform">
+          <span class="material-symbols-rounded text-[20px]">calendar_month</span>
+          Book Consultation
+        </a>
+        <a href="https://wa.me/918302247173" target="_blank" class="h-13 md:h-12 px-7 py-3.5 bg-success/10 text-success border border-success/30 rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 active:scale-[0.97] transition-transform">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Doctor
+        </a>
+      </div>
+
+      <div class="reveal reveal-d3 mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[13px] font-semibold text-muted">
+        <span class="flex items-center gap-1.5"><span class="material-symbols-rounded text-[18px] text-primary">verified_user</span> Trusted Specialists</span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-rounded text-[18px] text-primary">videocam</span> Durbin (Endoscopy)</span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-rounded text-[18px] text-primary">schedule</span> Open Daily till 7 PM</span>
+      </div>
+    </div>
+
+    <!-- Hero visual: Doctor photo -->
+    <div class="reveal reveal-d2">
+      <div class="bg-white rounded-2xl p-3 shadow-card-lg">
+        <div class="rounded-xl overflow-hidden hero-photo-height">
+          <img src="DR RAHUL MITTAL.png" alt="Dr Rahul Mittal — Dermatologist, Mittal Skin & ENT Clinic Ajmer" class="w-full h-full object-center object-top">
+        </div>
+        <div class="flex items-center justify-between px-2 pt-3 pb-1">
+          <div>
+            <div class="font-bold text-[15px]">Dr Rahul Mittal</div>
+            <div class="text-[12px] text-muted">MBBS, MD (Skin & VD) — Dermatologist</div>
+          </div>
+          <a href="#contact" class="text-[13px] font-bold text-secondary flex items-center gap-1">Book Now <span class="material-symbols-rounded text-[16px]">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TRUST MARQUEE ══════════ -->
+<div class="bg-primary py-3 overflow-hidden">
+  <div class="marquee-track flex whitespace-nowrap gap-0 text-white/90 text-[13px] font-semibold tracking-wide">
+    <div class="flex shrink-0 gap-10 px-5">
+      <span>⭐ 5.0 Rated Clinic</span><span>✅ Skin & Nose Allergies</span><span>✅ Acne & Pigmentation</span><span>✅ Hair Loss & White Spots</span><span>✅ Ear Cleaning & Perforation Repair</span><span>✅ Septum Repair</span><span>✅ Durbin Jaanch (Endoscopy)</span><span>✅ Thyroid Management</span>
+    </div>
+    <div class="flex shrink-0 gap-10 px-5" aria-hidden="true">
+      <span>⭐ 5.0 Rated Clinic</span><span>✅ Skin & Nose Allergies</span><span>✅ Acne & Pigmentation</span><span>✅ Hair Loss & White Spots</span><span>✅ Ear Cleaning & Perforation Repair</span><span>✅ Septum Repair</span><span>✅ Durbin Jaanch (Endoscopy)</span><span>✅ Thyroid Management</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services" class="max-w-6xl mx-auto px-4 md:px-6 pt-14 md:pt-20">
+  <div class="reveal text-center max-w-xl mx-auto">
+    <span class="text-[12px] font-bold text-secondary uppercase tracking-[0.15em]">What We Treat</span>
+    <h2 class="text-[28px] md:text-[38px] font-extrabold tracking-tight mt-2">Specialized Care, All Under One Roof</h2>
+    <p class="text-muted text-[15px] mt-3">From stubborn skin conditions to complex ENT concerns — precise diagnosis, gentle treatment.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+    <!-- Skin -->
+    <div class="reveal bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-tint flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">dermatology</span></div>
+      <h3 class="font-bold text-[17px]">Skin Care & Allergies</h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Acne & acne scar treatment</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Pigmentation & dark spots</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Hair fall & white spots</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Chronic pitti (urticaria) & eczema</li>
+      </ul>
+    </div>
+    <!-- ENT -->
+    <div class="reveal reveal-d1 bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-tint flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">hearing</span></div>
+      <h3 class="font-bold text-[17px]">ENT Care</h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Ear perforation repair</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Deviated nasal septum (DNS) repair</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Ear wax cleaning</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Nose allergies & sinus issues</li>
+      </ul>
+    </div>
+    <!-- Durbin -->
+    <div class="reveal reveal-d2 bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-primary-fixed/60 flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">biotech</span></div>
+      <h3 class="font-bold text-[17px]">Durbin Se Jaanch <span class="text-[11px] align-middle bg-primary text-white px-2 py-0.5 rounded-full font-bold ml-1">Endoscopy</span></h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> HD video endoscopy of nose & ear</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Live monitor view for patients</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Painless, zero-discomfort procedure</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Same-day reporting</li>
+      </ul>
+    </div>
+    <!-- Hair -->
+    <div class="reveal bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-tint flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">content_cut</span></div>
+      <h3 class="font-bold text-[17px]">Hair & PRP Regrowth</h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> PRP therapy for hair thinning</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Anti-hairfall medifacials</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Dandruff & scalp treatment</li>
+      </ul>
+    </div>
+    <!-- Anti-aging -->
+    <div class="reveal reveal-d1 bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-tint flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">face_4</span></div>
+      <h3 class="font-bold text-[17px]">Anti-Aging & Medifacials</h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Dull skin & glow restoration</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Youthful, radiant medifacials</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Skin texture & tone improvement</li>
+      </ul>
+    </div>
+    <!-- Thyroid -->
+    <div class="reveal reveal-d2 bg-white rounded-2xl p-6 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-border/50">
+      <div class="w-12 h-12 rounded-xl bg-tint flex items-center justify-center text-primary mb-4"><span class="material-symbols-rounded text-[26px]">endocrinology</span></div>
+      <h3 class="font-bold text-[17px]">Thyroid Care</h3>
+      <ul class="mt-3 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Thyroid evaluation & management</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Long-term hormone monitoring</li>
+        <li class="flex gap-2"><span class="material-symbols-rounded text-[18px] text-success shrink-0">check_circle</span> Lifestyle & diet guidance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BEFORE / AFTER RESULTS ══════════ -->
+<section id="results" class="mt-16 md:mt-24 bg-gradient-to-b from-white to-surface py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+      <div>
+        <span class="text-[12px] font-bold text-secondary uppercase tracking-[0.15em]">Real Patient Results</span>
+        <h2 class="text-[28px] md:text-[38px] font-extrabold tracking-tight mt-2">Before & After Transformations</h2>
+        <p class="text-muted text-[15px] mt-3 max-w-lg">Real, visible improvements from treatments at Mittal Clinic.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+      <!-- Acne -->
+      <div class="reveal bg-white rounded-2xl p-3 shadow-card hover:shadow-card-lg transition-shadow duration-300">
+        <div class="rounded-xl overflow-hidden">
+          <img src="assets/acne-scars.png" alt="Acne Scars Treatment Before and After — Clear Skin, Mittal Clinic Ajmer" class="w-full h-auto block">
+        </div>
+        <div class="px-2 pt-3 pb-1 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-[15px]">Acne Scars Treatment</div>
+            <div class="text-[12px] text-muted">Scar reduction & clear skin</div>
+          </div>
+          <button class="zoom-btn text-muted hover:text-primary transition-colors" data-full="assets/acne-scars.png" aria-label="View full image"><span class="material-symbols-rounded text-[22px]">zoom_in</span></button>
+        </div>
+      </div>
+      <!-- Hair -->
+      <div class="reveal reveal-d1 bg-white rounded-2xl p-3 shadow-card hover:shadow-card-lg transition-shadow duration-300">
+        <div class="rounded-xl overflow-hidden">
+          <img src="assets/hair-prp.png" alt="Hair PRP Regrowth Before and After — Thick Hair, Mittal Clinic Ajmer" class="w-full h-auto block">
+        </div>
+        <div class="px-2 pt-3 pb-1 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-[15px]">Hair PRP Regrowth</div>
+            <div class="text-[12px] text-muted">From thinning to thick hair</div>
+          </div>
+          <button class="zoom-btn text-muted hover:text-primary transition-colors" data-full="assets/hair-prp.png" aria-label="View full image"><span class="material-symbols-rounded text-[22px]">zoom_in</span></button>
+        </div>
+      </div>
+      <!-- Pigmentation -->
+      <div class="reveal bg-white rounded-2xl p-3 shadow-card hover:shadow-card-lg transition-shadow duration-300">
+        <div class="rounded-xl overflow-hidden">
+          <img src="assets/pigmentation.png" alt="Pigmentation and Dark Spots Before and After — Even Tone, Mittal Clinic Ajmer" class="w-full h-auto block">
+        </div>
+        <div class="px-2 pt-3 pb-1 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-[15px]">Pigmentation & Dark Spots</div>
+            <div class="text-[12px] text-muted">Even tone after 5 sessions</div>
+          </div>
+          <button class="zoom-btn text-muted hover:text-primary transition-colors" data-full="assets/pigmentation.png" aria-label="View full image"><span class="material-symbols-rounded text-[22px]">zoom_in</span></button>
+        </div>
+      </div>
+      <!-- Anti-aging -->
+      <div class="reveal reveal-d1 bg-white rounded-2xl p-3 shadow-card hover:shadow-card-lg transition-shadow duration-300">
+        <div class="rounded-xl overflow-hidden">
+          <img src="assets/anti-aging.png" alt="Anti-Aging Medifacials Before and After — Youthful Glow, Mittal Clinic Ajmer" class="w-full h-auto block">
+        </div>
+        <div class="px-2 pt-3 pb-1 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-[15px]">Anti-Aging Medifacials</div>
+            <div class="text-[12px] text-muted">Dull skin to youthful glow</div>
+          </div>
+          <button class="zoom-btn text-muted hover:text-primary transition-colors" data-full="assets/anti-aging.png" aria-label="View full image"><span class="material-symbols-rounded text-[22px]">zoom_in</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mt-8 bg-tint border border-blue-100 rounded-2xl p-4 md:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-[14px] text-muted text-center sm:text-left"><strong class="text-text">Disclaimer:</strong> Individual results vary. Treatment plans are personalized after in-clinic diagnosis by Dr. Rahul Mittal.</p>
+      <a href="#contact" class="shrink-0 h-11 px-6 bg-primary text-white rounded-xl font-bold text-[14px] flex items-center gap-2 shadow-cta active:scale-[0.97] transition-transform">Get Your Assessment <span class="material-symbols-rounded text-[18px]">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DURBIN HIGHLIGHT ══════════ -->
+<section id="durbin" class="max-w-6xl mx-auto px-4 md:px-6 pt-14 md:pt-20">
+  <div class="reveal bg-gradient-to-br from-primary-container to-primary text-white rounded-3xl p-7 md:p-12 relative overflow-hidden">
+    <div class="absolute -right-12 -bottom-12 w-56 h-56 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="relative grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur mb-4">
+          <span class="material-symbols-rounded text-[16px] text-emerald-300 icon-filled">videocam</span>
+          <span class="text-[12px] font-bold uppercase tracking-wider">Modern Diagnostic Equipment</span>
+        </div>
+        <h2 class="text-[26px] md:text-[34px] font-extrabold leading-tight">High-Definition Durbin Jaanch (Video Endoscopy)</h2>
+        <p class="mt-3 text-white/80 text-[15px] leading-relaxed">See inside your ear canal and nasal sinus with ultra-fine fiberoptic camera technology on a live monitor — so you understand exactly what's happening.</p>
+        <div class="mt-5 space-y-3 text-[14px]">
+          <div class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-400/20 flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-rounded text-emerald-300 text-[15px]">check</span></span><span><strong>Painless zero-touch</strong> nasal & ear exploration</span></div>
+          <div class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-400/20 flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-rounded text-emerald-300 text-[15px]">check</span></span><span><strong>Live monitor view</strong> — patients see their own diagnosis</span></div>
+          <div class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-400/20 flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-rounded text-emerald-300 text-[15px]">check</span></span><span><strong>Same-day reporting</strong> for sinusitis, polyps & ear drum issues</span></div>
+        </div>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-5 border border-white/20">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-rounded text-[34px] text-blue-200">sensors</span>
+          <div>
+            <div class="font-bold text-[16px]">Zero Discomfort Procedure</div>
+            <div class="text-white/70 text-[13px]">Takes only 5–7 minutes during OPD</div>
+          </div>
+          <span class="ml-auto px-2.5 py-1 bg-white text-primary rounded-lg text-[12px] font-extrabold">INCLUDED</span>
+        </div>
+        <div class="space-y-2.5">
+          <div class="bg-white/10 rounded-xl p-3 flex justify-between text-[13px]"><span class="text-white/80">Ear canal examination</span><span class="font-bold">✓ Live HD</span></div>
+          <div class="bg-white/10 rounded-xl p-3 flex justify-between text-[13px]"><span class="text-white/80">Nasal sinus inspection</span><span class="font-bold">✓ Live HD</span></div>
+          <div class="bg-white/10 rounded-xl p-3 flex justify-between text-[13px]"><span class="text-white/80">Throat & voice box view</span><span class="font-bold">✓ Live HD</span></div>
+        </div>
+        <a href="https://wa.me/918302247173?text=Hello%2C%20I%20want%20to%20book%20a%20Durbin%20Jaanch%20(endoscopy)%20appointment." target="_blank" class="mt-4 w-full h-12 bg-white text-primary rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 active:scale-[0.97] transition-transform">
+          <span class="material-symbols-rounded text-[20px]">biotech</span> Book Durbin Jaanch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ REVIEWS ══════════ -->
+<section id="reviews" class="max-w-6xl mx-auto px-4 md:px-6 pt-14 md:pt-20">
+  <div class="reveal text-center">
+    <span class="text-[12px] font-bold text-secondary uppercase tracking-[0.15em]">Patient Love</span>
+    <h2 class="text-[28px] md:text-[38px] font-extrabold tracking-tight mt-2">Rated 5.0 by 100+ Patients</h2>
+    <div class="flex items-center justify-center gap-1 mt-3 text-tertiary">
+      <span class="material-symbols-rounded icon-filled text-[24px]">star</span>
+      <span class="material-symbols-rounded icon-filled text-[24px]">star</span>
+      <span class="material-symbols-rounded icon-filled text-[24px]">star</span>
+      <span class="material-symbols-rounded icon-filled text-[24px]">star</span>
+      <span class="material-symbols-rounded icon-filled text-[24px]">star</span>
+      <span class="ml-2 text-[14px] font-bold text-text">5.0 / 5.0</span>
+    </div>
+  </div>
+
+  <div class="reveal reveal-d1 mt-8 max-w-2xl mx-auto overflow-hidden">
+    <div class="slide-track" id="slideTrack">
+      <div class="w-full shrink-0 px-1">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-card text-center">
+          <span class="material-symbols-rounded text-primary/30 text-[40px]">format_quote</span>
+          <p class="text-[16px] md:text-[18px] leading-relaxed italic text-text">"I was suffering from allergic reactions for 3 years. After meeting Dr. Rahul, I was cured in just one month!"</p>
+          <div class="mt-4 text-tertiary flex justify-center gap-0.5">
+            <span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span>
+          </div>
+          <div class="mt-2 font-bold text-[14px]">Verified Patient <span class="text-muted font-medium">• Adarsh Nagar, Ajmer</span></div>
+        </div>
+      </div>
+      <div class="w-full shrink-0 px-1">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-card text-center">
+          <span class="material-symbols-rounded text-primary/30 text-[40px]">format_quote</span>
+          <p class="text-[16px] md:text-[18px] leading-relaxed italic text-text">"Dr. Rahul explains everything on the durbin screen with transparent care. He never prescribes unnecessary medicines. One of the best ENT doctors in Ajmer."</p>
+          <div class="mt-4 text-tertiary flex justify-center gap-0.5">
+            <span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span>
+          </div>
+          <div class="mt-2 font-bold text-[14px]">Mukesh Sharma <span class="text-muted font-medium">• Ajmer City</span></div>
+        </div>
+      </div>
+      <div class="w-full shrink-0 px-1">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-card text-center">
+          <span class="material-symbols-rounded text-primary/30 text-[40px]">format_quote</span>
+          <p class="text-[16px] md:text-[18px] leading-relaxed italic text-text">"Booked on WhatsApp, got a quick token, and was seen on time. Honest ₹499 consultation with no hidden charges. Highly recommended clinic."</p>
+          <div class="mt-4 text-tertiary flex justify-center gap-0.5">
+            <span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span><span class="material-symbols-rounded icon-filled text-[16px]">star</span>
+          </div>
+          <div class="mt-2 font-bold text-[14px]">Happy Visitor <span class="text-muted font-medium">• Google Review</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2 mt-5" id="slideDots"></div>
+  </div>
+</section>
+
+<!-- ══════════ PRICING ══════════ -->
+<section class="max-w-6xl mx-auto px-4 md:px-6 pt-14 md:pt-20">
+  <div class="reveal bg-white rounded-3xl p-7 md:p-10 shadow-card-lg border border-border/60 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <span class="text-[12px] font-bold text-muted uppercase tracking-wider">Clear & Honest Care</span>
+      <h2 class="text-[26px] md:text-[32px] font-extrabold tracking-tight mt-2">Transparent OPD Consultation</h2>
+      <div class="mt-3 flex items-baseline gap-2">
+        <span class="text-[42px] font-extrabold text-primary">₹499</span>
+        <span class="text-muted text-[14px]">/ visit</span>
+        <span class="ml-2 text-[12px] font-bold text-success bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">No Hidden Surcharges</span>
+      </div>
+      <ul class="mt-5 space-y-3 text-[14px]">
+        <li class="flex items-center gap-2.5"><span class="material-symbols-rounded text-primary text-[20px]">check_circle</span> Detailed examination by Dr. Rahul Mittal</li>
+        <li class="flex items-center gap-2.5"><span class="material-symbols-rounded text-primary text-[20px]">check_circle</span> Video Durbin screen consultation included</li>
+        <li class="flex items-center gap-2.5"><span class="material-symbols-rounded text-primary text-[20px]">check_circle</span> 5-day WhatsApp prescription support</li>
+      </ul>
+    </div>
+    <div class="bg-surface rounded-2xl p-5 md:p-6">
+      <h3 class="font-bold text-[16px] mb-4 flex items-center gap-2"><span class="material-symbols-rounded text-primary">schedule</span> Clinic Hours</h3>
+      <div class="space-y-2.5 text-[14px]">
+        <div class="flex justify-between bg-white rounded-xl p-3"><span class="text-muted">Morning OPD</span><span class="font-bold">10:00 AM – 1:30 PM</span></div>
+        <div class="flex justify-between bg-white rounded-xl p-3"><span class="text-muted">Evening OPD</span><span class="font-bold">4:30 PM – 7:00 PM</span></div>
+        <div class="flex justify-between bg-white rounded-xl p-3"><span class="text-muted flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-success pulse-dot"></span>Open Daily</span><span class="font-bold text-success">Walk-ins Welcome</span></div>
+      </div>
+      <a href="#contact" class="mt-4 w-full h-12 bg-primary text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 shadow-cta active:scale-[0.97] transition-transform"><span class="material-symbols-rounded text-[20px]">calendar_month</span> Book Your Slot</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="max-w-3xl mx-auto px-4 md:px-6 pt-14 md:pt-20">
+  <div class="reveal text-center">
+    <h2 class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Common Questions</h2>
+  </div>
+  <div class="mt-8 space-y-3">
+    <div class="reveal acc bg-white rounded-2xl shadow-card border border-border/60 overflow-hidden">
+      <button class="acc-head w-full flex items-center justify-between gap-3 p-5 text-left font-bold text-[15px]">Do I need an appointment, or can I walk in?
+        <span class="acc-icon material-symbols-rounded text-primary shrink-0">add</span></button>
+      <div class="acc-body"><p class="px-5 pb-5 text-[14px] text-muted leading-relaxed">Walk-ins are welcome during OPD hours (10 AM–1:30 PM & 4:30–7 PM daily). For minimal waiting, we recommend booking a token in advance on WhatsApp or call.</p></div>
+    </div>
+    <div class="reveal reveal-d1 acc bg-white rounded-2xl shadow-card border border-border/60 overflow-hidden">
+      <button class="acc-head w-full flex items-center justify-between gap-3 p-5 text-left font-bold text-[15px]">Is Durbin Jaanch (endoscopy) painful?
+        <span class="acc-icon material-symbols-rounded text-primary shrink-0">add</span></button>
+      <div class="acc-body"><p class="px-5 pb-5 text-[14px] text-muted leading-relaxed">No. It's a painless, zero-touch procedure using a fine fiberoptic camera. It takes only 5–7 minutes and you can watch everything live on the monitor.</p></div>
+    </div>
+    <div class="reveal reveal-d2 acc bg-white rounded-2xl shadow-card border border-border/60 overflow-hidden">
+      <button class="acc-head w-full flex items-center justify-between gap-3 p-5 text-left font-bold text-[15px]">What skin conditions do you treat?
+        <span class="acc-icon material-symbols-rounded text-primary shrink-0">add</span></button>
+      <div class="acc-body"><p class="px-5 pb-5 text-[14px] text-muted leading-relaxed">Acne & acne scars, pigmentation & dark spots, hair fall & white spots, chronic pitti (urticaria), eczema, dull skin, and allergy-related skin conditions — all with personalized treatment plans.</p></div>
+    </div>
+    <div class="reveal reveal-d3 acc bg-white rounded-2xl shadow-card border border-border/60 overflow-hidden">
+      <button class="acc-head w-full flex items-center justify-between gap-3 p-5 text-left font-bold text-[15px]">How much does a consultation cost?
+        <span class="acc-icon material-symbols-rounded text-primary shrink-0">add</span></button>
+      <div class="acc-body"><p class="px-5 pb-5 text-[14px] text-muted leading-relaxed">A transparent flat fee of ₹499 per visit — includes detailed examination, video durbin review, and 5-day WhatsApp prescription support. No hidden charges, ever.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact" class="max-w-6xl mx-auto px-4 md:px-6 pt-14 md:pt-20 pb-16">
+  <div class="reveal bg-gradient-to-br from-primary to-primary-container text-white rounded-3xl p-7 md:p-12 relative overflow-hidden">
+    <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+    <div class="relative grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-[26px] md:text-[34px] font-extrabold leading-tight">Take the First Step Toward Better Health</h2>
+        <p class="mt-3 text-white/80 text-[15px]">Book your consultation today — quick token confirmation, minimal waiting.</p>
+        <div class="mt-6 space-y-3.5 text-[14px]">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-rounded text-emerald-300 mt-0.5">location_on</span>
+            <span class="text-white/90">Makan No. 2, A-16, Gali No. 2, Shalimar Colony, Adarsh Nagar, Ajmer, Rajasthan 305002</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-rounded text-emerald-300">call</span>
+            <a href="tel:+918302247173" class="font-bold text-[16px] hover:underline">+91 83022 47173</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-rounded text-emerald-300">schedule</span>
+            <span class="text-white/90">Open daily • 10:00 AM – 7:00 PM (lunch break 1:30–4:30)</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3 justify-center">
+        <a href="https://wa.me/918302247173?text=Hello%2C%20I%20would%20like%20to%20book%20an%20OPD%20appointment%20at%20Mittal%20Skin%20and%20ENT%20Clinic." target="_blank" class="h-14 bg-white text-primary rounded-xl font-extrabold text-[16px] flex items-center justify-center gap-2 shadow-lg active:scale-[0.97] transition-transform">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Appointment
+        </a>
+        <a href="tel:+918302247173" class="h-14 bg-white/15 border border-white/30 backdrop-blur rounded-xl font-bold text-[16px] flex items-center justify-center gap-2 active:scale-[0.97] transition-transform">
+          <span class="material-symbols-rounded text-[20px]">call</span> Call Now
+        </a>
+        <a href="https://maps.google.com/?q=Mittal+Skin+and+ENT+Clinic+Adarsh+Nagar+Ajmer" target="_blank" class="h-14 bg-white/15 border border-white/30 backdrop-blur rounded-xl font-bold text-[16px] flex items-center justify-center gap-2 active:scale-[0.97] transition-transform">
+          <span class="material-symbols-rounded text-[20px]">directions</span> Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="mt-10 text-center text-[13px] text-muted">
+    <p class="font-bold text-text">Mittal Skin & ENT Clinic, Ajmer</p>
+    <p class="mt-1">Trusted Dermatology & ENT Specialists • Rated 5.0 ⭐ by 100+ Patients</p>
+    <p class="mt-3 text-[12px]">© 2026 Mittal Clinic. All rights reserved.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ MOBILE STICKY CTA ══════════ -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl border-t border-border shadow-[0_-4px_20px_rgba(19,27,46,0.08)]">
+  <div class="flex gap-2 p-3 pb-[calc(12px+env(safe-area-inset-bottom))]">
+    <a href="https://wa.me/918302247173" target="_blank" class="flex-1 h-12 bg-success text-white rounded-xl font-bold text-[14px] flex items-center justify-center gap-1.5 active:scale-[0.97] transition-transform">
+      <span class="material-symbols-rounded text-[19px]">chat</span> WhatsApp
+    </a>
+    <a href="tel:+918302247173" class="flex-1 h-12 bg-primary text-white rounded-xl font-bold text-[14px] flex items-center justify-center gap-1.5 active:scale-[0.97] transition-transform">
+      <span class="material-symbols-rounded text-[19px]">call</span> Call Now
+    </a>
+    <a href="#contact" class="flex-1 h-12 bg-tertiary text-white rounded-xl font-bold text-[14px] flex items-center justify-center gap-1.5 active:scale-[0.97] transition-transform">
+      <span class="material-symbols-rounded text-[19px]">calendar_month</span> Book 
+    </a>
+  </div>
+</div>
+
+<!-- ══════════ FLOATING WHATSAPP (desktop) ══════════ -->
+<a href="https://wa.me/918302247173" target="_blank" aria-label="Chat on WhatsApp"
+   class="hidden md:flex floaty fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-success text-white items-center justify-center shadow-[0_8px_25px_rgba(16,185,129,0.45)] hover:scale-110 transition-transform">
+  <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Full size before-after result">
+  <button class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 text-white flex items-center justify-center backdrop-blur active:scale-95" aria-label="Close">
+    <span class="material-symbols-rounded text-[24px]">close</span>
+  </button>
+</div>
+
+<script>
+// ─── Scroll reveal ───
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ─── Topbar shadow ───
+const topbar = document.getElementById('topbar');
+addEventListener('scroll', () => topbar.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+// ─── Mobile menu ───
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuBtn.querySelector('.material-symbols-rounded').textContent =
+    mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+});
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.add('hidden');
+  menuBtn.querySelector('.material-symbols-rounded').textContent = 'menu';
+}));
+
+// ─── Before/After drag sliders ───
+document.querySelectorAll('[data-ba]').forEach(wrap => {
+  const before = wrap.querySelector('.ba-before');
+  const handle = wrap.querySelector('.ba-handle');
+  const setPos = p => {
+    p = Math.max(2, Math.min(98, p));
+    before.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+    handle.style.left = p + '%';
+  };
+  setPos(50);
+  let dragging = false;
+  const move = x => {
+    const r = wrap.getBoundingClientRect();
+    setPos(((x - r.left) / r.width) * 100);
+  };
+  const start = x => { dragging = true; move(x); };
+  const end = () => dragging = false;
+
+  wrap.addEventListener('pointerdown', e => { wrap.setPointerCapture(e.pointerId); start(e.clientX); });
+  wrap.addEventListener('pointermove', e => dragging && move(e.clientX));
+  wrap.addEventListener('pointerup', end);
+  wrap.addEventListener('pointercancel', end);
+});
+
+// ─── Lightbox zoom ───
+const lightbox = document.getElementById('lightbox');
+const lbImg = lightbox.querySelector('img');
+document.querySelectorAll('.zoom-btn').forEach(btn => btn.addEventListener('click', e => {
+  e.stopPropagation();
+  lbImg.src = btn.dataset.full;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}));
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+// ─── Testimonial auto-slider ───
+const track = document.getElementById('slideTrack');
+const dotsWrap = document.getElementById('slideDots');
+const slides = track.children.length;
+let cur = 0, timer;
+for (let i = 0; i < slides; i++) {
+  const d = document.createElement('button');
+  d.className = 'w-2 h-2 rounded-full transition-all duration-300 ' + (i === 0 ? 'bg-primary w-6' : 'bg-border');
+  d.setAttribute('aria-label', 'Review ' + (i + 1));
+  d.addEventListener('click', () => go(i));
+  dotsWrap.appendChild(d);
+}
+function go(i) {
+  cur = i;
+  track.style.transform = `translateX(-${i * 100}%)`;
+  [...dotsWrap.children].forEach((d, j) => {
+    d.className = 'rounded-full transition-all duration-300 h-2 ' + (j === i ? 'bg-primary w-6' : 'bg-border w-2');
+  });
+  restart();
+}
+function restart() { clearInterval(timer); timer = setInterval(() => go((cur + 1) % slides), 5000); }
+restart();
+
+// ─── FAQ accordion ───
+document.querySelectorAll('.acc-head').forEach(h => h.addEventListener('click', () => {
+  const acc = h.parentElement;
+  const wasOpen = acc.classList.contains('open');
+  document.querySelectorAll('.acc.open').forEach(a => a.classList.remove('open'));
+  if (!wasOpen) acc.classList.add('open');
+}));
+</script>
+</body>
+</html>
